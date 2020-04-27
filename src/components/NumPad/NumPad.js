@@ -1,7 +1,12 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 function NumPad({ id, label }) {
-  return <div id={id}>{label}</div>;
+  return (
+    <Button outline color="secondary" id={id}>
+      {label}
+    </Button>
+  );
 }
 
 export default NumPad;

@@ -1,7 +1,12 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 function ClearPad() {
-  return <div id="clear">Clear pad</div>;
+  return (
+    <Button outline color="primary" id="clear">
+      Clear pad
+    </Button>
+  );
 }
 
 export default ClearPad;

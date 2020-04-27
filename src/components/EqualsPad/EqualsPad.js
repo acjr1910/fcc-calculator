@@ -1,7 +1,12 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 function EqualsPad() {
-  return <div id="equals">equals</div>;
+  return (
+    <Button outline color="secondary" id="equals">
+      =
+    </Button>
+  );
 }
 
 export default EqualsPad;
