@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { DisplayContext } from '../../contexts/DisplayContext';
 
 function Display() {
-  const { display } = useContext(DisplayContext);
-  return <div>curr value: {display}</div>;
+  const { state } = useContext(DisplayContext);
+  console.log('display state', state);
+  return <div>curr value: {state}</div>;
 }
 
 export default Display;

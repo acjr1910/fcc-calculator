@@ -10,7 +10,7 @@ const operatorPads = [
     operator: '-',
   },
   {
-    id: 'multuply',
+    id: 'multiply',
     value: 'x',
     operator: '*',
   },

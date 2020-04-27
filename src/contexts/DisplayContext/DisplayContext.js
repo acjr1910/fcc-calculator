@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+import DisplayReducer from '../../reducers/DisplayReducer';
 
 const DisplayContext = React.createContext();
 
 function DisplayContextProvider({ children }) {
-  const [display, setDisplay] = useState('');
+  const initialState = '';
+
+  const [state, dispatch] = useReducer(DisplayReducer, initialState);
 
   return (
-    <DisplayContext.Provider value={{ display, setDisplay }}>
+    <DisplayContext.Provider value={{ state, dispatch }}>
       {children}
     </DisplayContext.Provider>
   );
