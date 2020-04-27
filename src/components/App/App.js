@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from '../ErrorBoundary';
 import { DisplayContextProvider } from '../../contexts/DisplayContext';
 import Display from '../Display';
 import NumPad from '../NumPad';
@@ -14,12 +15,13 @@ import './styles.css';
 
 function App() {
   const numPads = numPadsData.reverse().map((numPad) => {
-    return <NumPad id={numPad.id} label={numPad.value} />;
+    return <NumPad key={numPad.id} id={numPad.id} label={numPad.value} />;
   });
 
   const operatorPads = operatorPadsData.reverse().map((operatorPad) => {
     return (
       <OperatorPad
+        key={operatorPad.id}
         id={operatorPad.id}
         label={operatorPad.value}
         operator={operatorPad.operator}
@@ -28,20 +30,22 @@ function App() {
   });
 
   return (
-    <DisplayContextProvider>
-      <div className="calculator">
-        <div>
-          <Display />
-          {numPads}
-          <DecimalPad />
-          <EqualsPad />
+    <ErrorBoundary>
+      <DisplayContextProvider>
+        <div className="calculator">
+          <div>
+            <Display />
+            {numPads}
+            <DecimalPad />
+            <EqualsPad />
+          </div>
+          <div>
+            <ClearPad />
+            {operatorPads}
+          </div>
         </div>
-        <div>
-          <ClearPad />
-          {operatorPads}
-        </div>
-      </div>
-    </DisplayContextProvider>
+      </DisplayContextProvider>
+    </ErrorBoundary>
   );
 }
 

@@ -4,7 +4,7 @@ import DisplayReducer from '../../reducers/DisplayReducer';
 const DisplayContext = React.createContext();
 
 function DisplayContextProvider({ children }) {
-  const initialState = '';
+  const initialState = '0';
 
   const [state, dispatch] = useReducer(DisplayReducer, initialState);
 

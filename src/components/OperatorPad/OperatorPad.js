@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { Button } from 'reactstrap';
 import { DisplayContext } from '../../contexts/DisplayContext';
 
+import operatorAction from '../../actions/operator';
+
 function OperatorPad({ id, label, operator }) {
   const { dispatch } = useContext(DisplayContext);
 
   function handleClick() {
-    dispatch({
-      type: id.toUpperCase(),
-      payload: label,
-    });
+    dispatch(operatorAction(id.toUpperCase(), label));
   }
 
   return (

@@ -3,8 +3,7 @@ import { DisplayContext } from '../../contexts/DisplayContext';
 
 function Display() {
   const { state } = useContext(DisplayContext);
-  console.log('display state', state);
-  return <div>curr value: {state}</div>;
+  return <div id="display">{state}</div>;
 }
 
 export default Display;

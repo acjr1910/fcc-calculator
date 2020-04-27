@@ -3,14 +3,14 @@ import { Button } from 'reactstrap';
 
 import { DisplayContext } from '../../contexts/DisplayContext';
 
+import numberAction from '../../actions/number';
+import { NUMBER } from '../../constants/number';
+
 function NumPad({ id, label }) {
   const { dispatch } = useContext(DisplayContext);
 
   function handleClick() {
-    dispatch({
-      type: 'NUMBER',
-      payload: label,
-    });
+    dispatch(numberAction(NUMBER, label));
   }
 
   return (
