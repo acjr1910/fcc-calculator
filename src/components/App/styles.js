@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
       width: 100%;
       color: white;
       background: ${colors.display};
+      overflow: scroll;
     }
     &__leftpads {
       display: flex;
@@ -35,6 +36,7 @@ export const Wrapper = styled.div`
       border: 1px solid ${colors.numberPads.rgbBorder};
       color: ${colors.numberPads.content};
       padding: 0.8rem 1rem;
+      outline: none;
     }
     &__operatorpad,
     &__clearpad {
@@ -43,6 +45,7 @@ export const Wrapper = styled.div`
       background: ${colors.operatorPads.background};
       color: white;
       padding: 0.8rem 1rem;
+      outline: none;
     }
   }
 `;
