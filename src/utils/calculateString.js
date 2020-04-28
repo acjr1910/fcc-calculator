@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 export default function calculateString(string) {
   if (typeof string == 'string') {
     const splittedString = string
@@ -6,6 +7,8 @@ export default function calculateString(string) {
       .split(' ');
 
     let parsedNumbers = [];
+    let finalOutput = [];
+    let isOperator = 0;
 
     for (let i = 0; i < splittedString.length; i++) {
       const curr = splittedString[i];
@@ -18,24 +21,26 @@ export default function calculateString(string) {
       }
     }
 
-    let finalOutput = [];
-
-    let operator = 0;
-
     for (let i = 0; i < parsedNumbers.length; i++) {
-      const curr = parsedNumbers[i];
+      const currentValue = parsedNumbers[i];
 
-      if (operator == 1 && isNaN(curr)) {
-        finalOutput[i - 1] = curr;
+      if (isOperator && currentValue == '-') {
+        finalOutput.push(currentValue);
+      } else if (isOperator && isNaN(currentValue)) {
+        finalOutput[i - 1] = currentValue;
+        if (currentValue != '-' && isNaN(finalOutput[i - 2])) {
+          finalOutput[i - 2] = '';
+        }
       } else {
-        finalOutput.push(curr);
-        operator = 0;
+        finalOutput.push(currentValue);
+        isOperator = 0;
       }
 
-      if (isNaN(curr)) {
-        operator = 1;
+      if (isNaN(currentValue)) {
+        isOperator = 1;
       }
     }
+
     return finalOutput.join(' ');
   }
   return '0';

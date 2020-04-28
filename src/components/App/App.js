@@ -1,6 +1,7 @@
 import React from 'react';
 import ErrorBoundary from '../ErrorBoundary';
 import { DisplayContextProvider } from '../../contexts/DisplayContext';
+import { DecimalContextProvider } from '../../contexts/DecimalContext';
 import Display from '../Display';
 import NumPad from '../NumPad';
 import DecimalPad from '../DecimalPad';
@@ -32,18 +33,20 @@ function App() {
   return (
     <ErrorBoundary>
       <DisplayContextProvider>
-        <div className="calculator">
-          <div>
-            <Display />
-            {numPads}
-            <DecimalPad />
-            <EqualsPad />
+        <DecimalContextProvider>
+          <div className="calculator">
+            <div>
+              <Display />
+              {numPads}
+              <DecimalPad />
+              <EqualsPad />
+            </div>
+            <div>
+              <ClearPad />
+              {operatorPads}
+            </div>
           </div>
-          <div>
-            <ClearPad />
-            {operatorPads}
-          </div>
-        </div>
+        </DecimalContextProvider>
       </DisplayContextProvider>
     </ErrorBoundary>
   );

@@ -1,8 +1,6 @@
 // import stringCalculator from 'string-calculator';
 import calculateString from '../../utils/calculateString';
 
-let lastInputNumber;
-
 function DisplayReducer(state, action) {
   switch (action.type) {
     case 'ADD':
@@ -14,7 +12,7 @@ function DisplayReducer(state, action) {
     case 'DIVIDE':
       return ` ${state} ${action.payload} `;
     case 'NUMBER':
-      lastInputNumber = action.payload;
+      // eslint-disable-next-line eqeqeq
       if (state == 0) {
         return action.payload;
       }
@@ -22,12 +20,11 @@ function DisplayReducer(state, action) {
         ? `${action.payload}`
         : `${state}${action.payload}`;
     case 'DECIMAL':
-      // Fix here
-      const doubleDecimal = lastInputNumber === state[state.length - 1];
-      return doubleDecimal ? state : `${state}.`;
+      return `${state}.`;
     case 'CLEAR':
       return '0';
     case 'EQUALS':
+      // eslint-disable-next-line no-eval
       return eval(calculateString(state));
     default:
       return state;
