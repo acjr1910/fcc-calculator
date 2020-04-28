@@ -23,10 +23,9 @@ export const Wrapper = styled.div`
       width: 75%;
     }
     &__rightpads {
-      width: 25%;
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
+      width: 25%;
     }
     &__numpad,
     &__decimalpad,
@@ -40,10 +39,10 @@ export const Wrapper = styled.div`
     &__operatorpad,
     &__clearpad {
       width: 100%;
-      border: 1px solid ${colors.operatorPads.rgbBorder};
+      border: none;
       background: ${colors.operatorPads.background};
       color: white;
-      padding: 1rem 0;
+      padding: 0.8rem 1rem;
     }
   }
 `;

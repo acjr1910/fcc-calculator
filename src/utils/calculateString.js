@@ -4,6 +4,7 @@ export default function calculateString(string) {
     const splittedString = string
       .replace('x', '*')
       .replace(':', '/')
+      .replace('÷', '/')
       .split(' ');
 
     let parsedNumbers = [];

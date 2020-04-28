@@ -16,7 +16,7 @@ const operatorPads = [
   },
   {
     id: 'divide',
-    value: ':',
+    value: '÷',
     operator: '/',
   },
 ];

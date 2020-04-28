@@ -26,6 +26,8 @@ function DisplayReducer(state, action) {
     case 'EQUALS':
       // eslint-disable-next-line no-eval
       return eval(calculateString(state));
+    case 'EMPTY-EQUALS':
+      return '0';
     default:
       return state;
   }
