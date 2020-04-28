@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'reactstrap';
 
 import { DisplayContext } from '../../contexts/DisplayContext';
 
@@ -14,9 +13,9 @@ function NumPad({ id, label }) {
   }
 
   return (
-    <Button outline color="secondary" id={id} onClick={handleClick}>
+    <button className="calculator__numpad" id={id} onClick={handleClick}>
       {label}
-    </Button>
+    </button>
   );
 }
 

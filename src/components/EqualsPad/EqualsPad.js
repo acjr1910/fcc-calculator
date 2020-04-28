@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'reactstrap';
 import { DisplayContext } from '../../contexts/DisplayContext';
 
 function EqualsPad() {
@@ -12,9 +11,9 @@ function EqualsPad() {
   }
 
   return (
-    <Button outline color="secondary" id="equals" onClick={handleClick}>
+    <button className="calculator__equalspad" id="equals" onClick={handleClick}>
       =
-    </Button>
+    </button>
   );
 }
 

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'reactstrap';
 import { DisplayContext } from '../../contexts/DisplayContext';
 import { DecimalContext } from '../../contexts/DecimalContext';
 
@@ -15,9 +14,9 @@ function ClearPad() {
   }
 
   return (
-    <Button outline color="primary" id="clear" onClick={handleClick}>
-      Clear pad
-    </Button>
+    <button className="calculator__clearpad" id="clear" onClick={handleClick}>
+      AC
+    </button>
   );
 }
 

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'reactstrap';
 import { DisplayContext } from '../../contexts/DisplayContext';
 import { DecimalContext } from '../../contexts/DecimalContext';
 
@@ -15,9 +14,9 @@ function OperatorPad({ id, label, operator }) {
   }
 
   return (
-    <Button outline color="primary" id={id} onClick={handleClick}>
+    <button className="calculator__operatorpad" id={id} onClick={handleClick}>
       {label}
-    </Button>
+    </button>
   );
 }
 

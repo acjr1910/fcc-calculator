@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'reactstrap';
 import { DisplayContext } from '../../contexts/DisplayContext';
 import { DecimalContext } from '../../contexts/DecimalContext';
 import decimalAction from '../../actions/decimal';
@@ -16,9 +15,13 @@ function DecimalPad() {
   }
 
   return (
-    <Button outline color="secondary" id="decimal" onClick={handleClick}>
+    <button
+      className="calculator__decimalpad"
+      id="decimal"
+      onClick={handleClick}
+    >
       .
-    </Button>
+    </button>
   );
 }
 

@@ -12,7 +12,7 @@ import OperatorPad from '../OperatorPad';
 import numPadsData from '../../utils/numPads';
 import operatorPadsData from '../../utils/operatorPads';
 
-import './styles.css';
+import { Wrapper } from './styles';
 
 function App() {
   const numPads = numPadsData.reverse().map((numPad) => {
@@ -34,18 +34,20 @@ function App() {
     <ErrorBoundary>
       <DisplayContextProvider>
         <DecimalContextProvider>
-          <div className="calculator">
-            <div>
+          <Wrapper className="calculator">
+            <div className="calculator__display">
               <Display />
+            </div>
+            <div className="calculator__leftpads">
               {numPads}
               <DecimalPad />
               <EqualsPad />
             </div>
-            <div>
+            <div className="calculator__rightpads">
               <ClearPad />
               {operatorPads}
             </div>
-          </div>
+          </Wrapper>
         </DecimalContextProvider>
       </DisplayContextProvider>
     </ErrorBoundary>
